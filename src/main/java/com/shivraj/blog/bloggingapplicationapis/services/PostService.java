@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.shivraj.blog.bloggingapplicationapis.entities.Post;
 import com.shivraj.blog.bloggingapplicationapis.payloads.PostDto;
+import com.shivraj.blog.bloggingapplicationapis.payloads.PostResponce;
 
 public interface PostService {
 
@@ -11,16 +12,16 @@ public interface PostService {
 	PostDto createPost(PostDto postDto , Integer UserId , Integer categoryId);
 	
 	//update
-	Post updatePost(PostDto postDto, Integer postId);
+	PostDto updatePost(PostDto postDto, Integer postId);
 	
 	//delete post
 	void deletePost(Integer postId);
 	
 	//get All post
-	List<Post> getAllPost();
+	PostResponce getAllPost(Integer pageNumber , Integer pageSize , String sortBy , String sortDir);
 	
 	//get post by id
-	Post getPostById(Integer postId);
+	PostDto getPostById(Integer postId);
 	
 	//get all posts by category
 	List<PostDto> getPostsByCategory(Integer categoryId);
@@ -29,5 +30,5 @@ public interface PostService {
 	List<PostDto> getPostsByUser(Integer userId);
 	
 	//search posts
-	List<Post> SearchPosts(String keyword);
+	List<PostDto> SearchPosts(String keyword);
 }
