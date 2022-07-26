@@ -27,7 +27,7 @@ public class BloggingApplicationApisApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(this.passwordEncoder.encode("ganesh"));
+		System.out.println("mypassword"+this.passwordEncoder.encode("ganesh"));
 	}
 
 }
