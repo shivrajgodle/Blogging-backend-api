@@ -6,9 +6,13 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.shivraj.blog.bloggingapplicationapis.entities.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Getter
@@ -28,5 +32,6 @@ public class UserDto {
 	private String password;
 	@NotEmpty
 	private String about;
-	
+
+	private Set<RoleDto> role = new HashSet<>();
 }
